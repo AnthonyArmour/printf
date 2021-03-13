@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{'b', p_binary},
 		{'x', print_x},
 		{'X', print_X},
+		{'o', print_o},
 		{'\0', NULL}
 	};
 
