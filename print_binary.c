@@ -1,7 +1,8 @@
 #include "holberton.h"
 /**
  * p_binary - converts UI to binary
- * @num: input u int
+ * @count: keeps count for printf
+ * @list: input u int
  * Return: keeping count
  */
 int p_binary(int count, va_list list)
