@@ -30,5 +30,7 @@ int print_number(int count, int n);
 int p_binary(int count, va_list list);
 int print_u(int count, va_list list);
 int print_uint(int count, unsigned int n);
+int print_x(int count, va_list list);
+int print_X(int count, va_list list);
 
 #endif
