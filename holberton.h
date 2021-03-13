@@ -14,4 +14,8 @@ typedef struct conversion_specifier{
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
 int _printf(const char *format, ...);
+int print_char(int count, va_list list);
+int print_string(int count, va_list list);
+int print_di(int count, va_list list);
+
 #endif
