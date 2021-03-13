@@ -6,12 +6,19 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <limits.h>
 
 /* STRUCTS */
-typedef struct conversion_specifier{
+/**
+ * struct conversion_specifier - used for function pointers
+ * @letter: letter associated with function
+ * @f: function to call
+ */
+typedef struct conversion_specifier
+{
 	char letter;
 	int (*f)(int count, va_list list);
-}c_spec;
+} c_spec;
 
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
@@ -21,5 +28,7 @@ int print_string(int count, va_list list);
 int print_di(int count, va_list list);
 int print_number(int count, int n);
 int p_binary(int count, va_list list);
+int print_u(int count, va_list list);
+int print_uint(int count, unsigned int n);
 
 #endif

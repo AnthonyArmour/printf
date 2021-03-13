@@ -9,15 +9,16 @@ int _printf(const char *format, ...)
 	va_list list;
 	int x = 0, y = 0;
 	int count = 0;
-
 	c_spec specs[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_di},
 		{'i', print_di},
+		{'u', print_u},
 		{'b', p_binary},
 		{'\0', NULL}
 	};
+
 	va_start(list, format);
 	while (format && format[x])
 	{
