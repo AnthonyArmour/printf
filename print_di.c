@@ -43,16 +43,17 @@ int print_number(int count, int n)
 			y = y / 10;
 		}
 	}
+
 	return (count);
 }
 /**
  * print_di - prints int
- * @count:
- *
- *
+ * @count: keeping count
+ * @list: argument list
+ * Return: new count
  */
 int print_di(int count, va_list list)
 {
-	count = print_num(count, va_arg(list, int));
+	count = print_number(count, va_arg(list, int));
 	return (count);
 }

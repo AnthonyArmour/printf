@@ -32,11 +32,11 @@ int _printf(const char *format, ...)
 			{
 				if (specs[y].letter == format[x + 1])
 				{
-					specs[y].f(count, list);
+					count = specs[y].f(count, list);
+					x++;
 				}
 				y++;
 			}
-
 		}
 		else
 		{
