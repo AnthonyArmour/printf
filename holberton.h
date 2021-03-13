@@ -20,5 +20,6 @@ int print_char(int count, va_list list);
 int print_string(int count, va_list list);
 int print_di(int count, va_list list);
 int print_number(int count, int n);
+int p_binary(int count, va_list list);
 
 #endif
