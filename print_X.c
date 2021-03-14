@@ -19,7 +19,7 @@ int print_X(int count, va_list list)
 			num = num + 48;
 		else
 			num = num + 55;
-		hexnum[i] = rem;
+		hexnum[i] = num;
 		i++;
 		temp_num = temp_num / 16;
 	}
