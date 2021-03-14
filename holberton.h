@@ -20,17 +20,6 @@ typedef struct conversion_specifier
 	char letter;
 	int (*f)(int count, va_list list);
 } c_spec;
-/**
- * struct length_modifiers - used to modify length of output
- * @letters: string containing modifier letters
- * @f: function pointer
- */
-typedef struct length_modifiers
-{
-	char *letters;
-	int (*f)(int count, va_list list);
-} length_mod;
-
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
 char *_strdup(char *s);
@@ -53,5 +42,8 @@ int print_px(int count, unsigned long int ptr_val);
 int print_rot13(int count, va_list list);
 char *rot13(char *s);
 int print_rev(int count, va_list list);
+int print_long(int *x_ptr, int count, const char *format, va_list list);
+int print_ldi(int count, va_list list);
+int print_longnumber(int count, long int n);
 
 #endif

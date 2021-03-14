@@ -25,21 +25,7 @@ int _printf(const char *format, ...)
 		{'r', print_rev},
 		{'\0', NULL}
 	};
-	length_mod mods[] = {
-		{"ld", print_ldi},
-		{"li", print_ldi},
-		{"lu", print_lu},
-		{"lo", print_lo},
-		{"lx", print_lx},
-		{"lX", print_lX},
-		{"hd", print_hdi},
-		{"hi", print_hdi},
-		{"hu", print_hu},
-		{"ho", print_ho},
-		{"hx", print_hx},
-		{"hX", print_hX},
-		{NULL, NULL}
-	};
+	int *x_ptr = &x;
 
 	va_start(list, format);
 	while (format && format[x])
@@ -50,6 +36,11 @@ int _printf(const char *format, ...)
 			{
 				_putchar(format[x + 1]);
 				count++;
+			}
+			if (format[x + 1] == 'l')
+			{
+				count = print_long(x_ptr, count, format, list);
+				x++;
 			}
 			for (y = 0; specs[y].letter; y++)
 			{
