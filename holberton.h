@@ -7,6 +7,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
+#include <string.h>
 
 /* STRUCTS */
 /**
@@ -22,6 +23,7 @@ typedef struct conversion_specifier
 
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
+int _strlen(char *s);
 int _printf(const char *format, ...);
 int print_char(int count, va_list list);
 int print_string(int count, va_list list);
@@ -36,5 +38,9 @@ int print_o(int count, va_list list);
 int print_SX(int count, unsigned int num);
 int print_S(int count, va_list list);
 int print_p(int count, va_list list);
-int print_px(int count, unsigned long long int ptr_val);
+int print_px(int count, unsigned long int ptr_val);
+int print_rot13(int count, va_list list);
+char *rot13(char *s);
+int print_rev(int count, va_list list);
+
 #endif
