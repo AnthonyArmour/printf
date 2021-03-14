@@ -1,8 +1,9 @@
 #include "holberton.h"
 /**
- * rot13 - translates a string TO rot13
- * @s: the string to translate
- * Return: translated string
+ * print_rot13 - prints a string in ROT13
+ * @count: to keep count for printf
+ * @list: argument list
+ * Return: updated count
  */
 int print_rot13(int count, va_list list)
 {
@@ -22,7 +23,6 @@ int print_rot13(int count, va_list list)
 /**
  * rot13 - translates a string TO rot13
  * @s: the string to translate
- *
  * Return: translated string
  */
 char *rot13(char *s)

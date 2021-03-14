@@ -25,26 +25,39 @@ int _printf(const char *format, ...)
 		{'r', print_rev},
 		{'\0', NULL}
 	};
+	length_mod mods[] = {
+		{"ld", print_ldi},
+		{"li", print_ldi},
+		{"lu", print_lu},
+		{"lo", print_lo},
+		{"lx", print_lx},
+		{"lX", print_lX},
+		{"hd", print_hdi},
+		{"hi", print_hdi},
+		{"hu", print_hu},
+		{"ho", print_ho},
+		{"hx", print_hx},
+		{"hX", print_hX},
+		{NULL, NULL}
+	};
 
 	va_start(list, format);
 	while (format && format[x])
 	{
 		if (format[x] == '%')
 		{
-			y = 0;
 			if (format[x + 1] == '%')
 			{
 				_putchar(format[x + 1]);
 				count++;
 			}
-			while (specs[y].letter)
+			for (y = 0; specs[y].letter; y++)
 			{
 				if (specs[y].letter == format[x + 1])
 				{
 					count = specs[y].f(count, list);
 					x++;
 				}
-				y++;
 			}
 		}
 		else
