@@ -10,14 +10,13 @@ int print_rot13(int count, va_list list)
 	int i = 0;
 
 	new_s = rot13(s);
-	printf("successfully stored into new_s\n");
-	printf("new_s is: %s\n", new_s);
 	while (new_s && new_s[i])
 	{
 		_putchar(new_s[i]);
 		i++;
 		count++;
 	}
+	free(new_s);
 	return (count);
 }
 /**
@@ -28,15 +27,16 @@ int print_rot13(int count, va_list list)
  */
 char *rot13(char *s)
 {
-	int i, c;
+	int i;
+	char c;
+	char *new_s = _strdup(s);
 	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLM[\\]^_`nopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		printf("i = %d\n", i);
-		c = s[i];
+		c = new_s[i];
 		if (c >= 'A' && c <= 'z')
-		s[i] = rot13[c - 65];
+			new_s[i] = rot13[c - 65];
 	}
-	return (s);
+	return (new_s);
 }
