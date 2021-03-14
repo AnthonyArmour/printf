@@ -19,6 +19,8 @@ int _printf(const char *format, ...)
 		{'x', print_x},
 		{'X', print_X},
 		{'o', print_o},
+		{'S', print_S},
+		{'p', print_p},
 		{'\0', NULL}
 	};
 

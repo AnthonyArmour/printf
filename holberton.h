@@ -33,5 +33,8 @@ int print_uint(int count, unsigned int n);
 int print_x(int count, va_list list);
 int print_X(int count, va_list list);
 int print_o(int count, va_list list);
-
+int print_SX(int count, unsigned int num);
+int print_S(int count, va_list list);
+int print_p(int count, va_list list);
+int print_px(int count, unsigned long long int ptr_val);
 #endif
