@@ -23,6 +23,7 @@ typedef struct conversion_specifier
 
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
+char *_strdup(char *s);
 int _strlen(char *s);
 int _printf(const char *format, ...);
 int print_char(int count, va_list list);
