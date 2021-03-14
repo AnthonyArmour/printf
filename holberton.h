@@ -20,6 +20,16 @@ typedef struct conversion_specifier
 	char letter;
 	int (*f)(int count, va_list list);
 } c_spec;
+/**
+ * struct length_modifiers - used to modify length of output
+ * @letters: string containing modifier letters
+ * @f: function pointer
+ */
+typedef struct length_modifiers
+{
+	char *letters;
+	int (*f)(int count, va_list list);
+} length_mod;
 
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
