@@ -7,24 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int x = 0, y = 0;
-	int count = 0;
-	c_spec specs[] = {
-		{'c', print_char},
-		{'s', print_string},
-		{'d', print_di},
-		{'i', print_di},
-		{'u', print_u},
-		{'b', p_binary},
-		{'x', print_x},
-		{'X', print_X},
-		{'o', print_o},
-		{'S', print_S},
-		{'p', print_p},
-		{'R', print_rot13},
-		{'r', print_rev},
-		{'\0', NULL}
-	};
+	int x = 0, count = 0;
 	int *x_ptr = &x;
 
 	va_start(list, format);
@@ -37,23 +20,19 @@ int _printf(const char *format, ...)
 				_putchar(format[x + 1]);
 				count++;
 			}
-			if (format[x + 1] == 'l')
+			else if (format[x + 1] == 'l')
 			{
 				count = print_long(x_ptr, count, format, list);
 				x++;
 			}
-			if (format[x + 1] == 'h')
+			else if (format[x + 1] == 'h')
 			{
 				count = print_short(x_ptr, count, format, list);
 				x++;
 			}
-			for (y = 0; specs[y].letter; y++)
+			else
 			{
-				if (specs[y].letter == format[x + 1])
-				{
-					count = specs[y].f(count, list);
-					x++;
-				}
+				count = print_spec(x_ptr, count, format, list);
 			}
 		}
 		else
