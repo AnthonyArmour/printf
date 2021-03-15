@@ -42,6 +42,11 @@ int _printf(const char *format, ...)
 				count = print_long(x_ptr, count, format, list);
 				x++;
 			}
+			if (format[x + 1] == 'h')
+			{
+				count = print_short(x_ptr, count, format, list);
+				x++;
+			}
 			for (y = 0; specs[y].letter; y++)
 			{
 				if (specs[y].letter == format[x + 1])

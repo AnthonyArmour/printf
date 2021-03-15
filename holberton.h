@@ -51,5 +51,8 @@ int print_luint(int count, unsigned long int n);
 int print_lo(int count, va_list list);
 int print_lx(int count, va_list list);
 int print_lX(int count, va_list list);
+int print_shortnumber(int count, short int n);
+int print_hdi(int count, va_list list);
+int print_short(int *x_ptr, int count, const char *format, va_list list);
 
 #endif
