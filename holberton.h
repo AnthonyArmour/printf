@@ -20,6 +20,16 @@ typedef struct conversion_specifier
 	char letter;
 	int (*f)(int count, va_list list);
 } c_spec;
+/**
+ * struct flag_struct - used to detect flags
+ * @letter: flag
+ * @f: function to call
+ */
+typedef struct flag_struct
+{
+	char letter;
+	int (*f)(int count, const char *format, int *x_ptr, va_list list);
+} flag_t;
 
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
@@ -60,5 +70,8 @@ int print_ho(int count, va_list list);
 int print_hx(int count, va_list list);
 int print_hX(int count, va_list list);
 int print_spec(int *x_ptr, int count, const char *format, va_list list);
+int print_pound(int count, const char *format, int *x_ptr, va_list list);
+int print_space(int count, const char *format, int *x_ptr, va_list list);
+int print_plus(int count, const char *format, int *x_ptr, va_list list);
 
 #endif
