@@ -20,6 +20,7 @@ typedef struct conversion_specifier
 	char letter;
 	int (*f)(int count, va_list list);
 } c_spec;
+
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
 char *_strdup(char *s);
@@ -47,4 +48,8 @@ int print_ldi(int count, va_list list);
 int print_longnumber(int count, long int n);
 int print_lu(int count, va_list list);
 int print_luint(int count, unsigned long int n);
+int print_lo(int count, va_list list);
+int print_lx(int count, va_list list);
+int print_lX(int count, va_list list);
+
 #endif

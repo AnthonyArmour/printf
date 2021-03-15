@@ -13,10 +13,10 @@ int print_long(int *x_ptr, int count, const char *format, va_list list)
 		{'d', print_ldi},
 		{'i', print_ldi},
 		{'u', print_lu},
-/*		{'o', print_lo},
+		{'o', print_lo},
 		{'x', print_lx},
 		{'X', print_lX},
-*/		{'\0', NULL}
+		{'\0', NULL}
 	};
 	int x = 0;
 
