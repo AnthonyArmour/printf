@@ -9,6 +9,7 @@ int _printf(const char *format, ...)
 	va_list list;
 	int x = 0, count = 0;
 	int *x_ptr = &x;
+	char *buffer;
 
 	va_start(list, format);
 	while (format && format[x])
@@ -42,5 +43,6 @@ int _printf(const char *format, ...)
 		}
 		x++;
 	}
+	va_end(list);
 	return (count);
 }

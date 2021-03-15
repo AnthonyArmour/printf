@@ -9,7 +9,7 @@
  */
 int print_long(int *x_ptr, int count, const char *format, va_list list)
 {
-	c_spec mods[] = {
+	spec_t mods[] = {
 		{'d', print_ldi},
 		{'i', print_ldi},
 		{'u', print_lu},

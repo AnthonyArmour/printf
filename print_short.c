@@ -9,7 +9,7 @@
  */
 int print_short(int *x_ptr, int count, const char *format, va_list list)
 {
-	c_spec mods[] = {
+	spec_t mods[] = {
 		{'d', print_hdi},
 		{'i', print_hdi},
 		{'u', print_hu},

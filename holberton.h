@@ -19,7 +19,7 @@ typedef struct conversion_specifier
 {
 	char letter;
 	int (*f)(int count, va_list list);
-} c_spec;
+} spec_t;
 /**
  * struct flag_struct - used to detect flags
  * @letter: flag

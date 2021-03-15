@@ -10,7 +10,7 @@
 int print_spec(int *x_ptr, int count, const char *format, va_list list)
 {
 	int i = 0, ii;
-	c_spec specs[] = {
+	spec_t specs[] = {
 		{'c', print_char},
 		{'s', print_string},
 		{'d', print_di},
