@@ -54,5 +54,9 @@ int print_lX(int count, va_list list);
 int print_shortnumber(int count, short int n);
 int print_hdi(int count, va_list list);
 int print_short(int *x_ptr, int count, const char *format, va_list list);
-
+int print_shortuint(int count, unsigned short int n);
+int print_hu(int count, va_list list);
+int print_ho(int count, va_list list);
+int print_hx(int count, va_list list);
+int print_hX(int count, va_list list);
 #endif
