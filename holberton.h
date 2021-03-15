@@ -45,5 +45,6 @@ int print_rev(int count, va_list list);
 int print_long(int *x_ptr, int count, const char *format, va_list list);
 int print_ldi(int count, va_list list);
 int print_longnumber(int count, long int n);
-
+int print_lu(int count, va_list list);
+int print_luint(int count, unsigned long int n);
 #endif
