@@ -24,6 +24,7 @@ int print_plus(int count, const char *format, int *x_ptr, va_list list)
 			}
 			count += _printf("%d", temp);
 			*(x_ptr) += 1;
+			break;
 		}
 		i++;
 	}
