@@ -11,7 +11,10 @@ int print_string(int count, va_list list)
 	int x = 0;
 
 	if (temp_string == NULL)
-		return (-1);
+	{
+		count += _printf("(null)");
+		return (count);
+	}
 	while (temp_string && temp_string[x])
 	{
 		_putchar(temp_string[x]);
