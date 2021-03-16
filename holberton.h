@@ -20,6 +20,7 @@ typedef struct conversion_specifier
 	char letter;
 	int (*f)(int count, va_list list);
 } spec_t;
+
 /* FUNCTION PROTOTYPES */
 int _putchar(char c);
 int _strlen(char *s);
@@ -31,4 +32,6 @@ int print_number(int count, unsigned int n);
 int print_rev(int count, va_list list);
 int print_spec(int *x_ptr, int count, const char *format, va_list list);
 int print_percent(int count, const char *format, int *x_ptr);
+int p_binary(int count, va_list list);
+
 #endif
