@@ -26,8 +26,9 @@ int print_spec(int *x_ptr, int count, const char *format, va_list list)
 		{
 			if (flags[ii].letter == format[*(x_ptr) + 1])
 			{
-				count = flags[ii].f(count, format, x_ptr, list);
-				*(x_ptr) += 1, signal = 1;
+				count = flags[ii].f(count, format, x_ptr, list), signal = 1;
+				if (count != -1)
+					*(x_ptr) += 1;
 			}
 		}
 		if (specs[i].letter == format[*(x_ptr) + 1])
@@ -43,8 +44,9 @@ int print_spec(int *x_ptr, int count, const char *format, va_list list)
 				signal2 = 1;
 		if (signal2 == 0)
 			return (-1);
-		_putchar(format[*(x_ptr)]);
-		count++, *(x_ptr) += 1;
+		_putchar(format[*(x_ptr)]), count++;
+		if (format[*(x_ptr) + 1] != '\n')
+			*(x_ptr) += 1;
 	}
 	return (count);
 }

@@ -10,18 +10,22 @@
 int print_space(int count, const char *format, int *x_ptr, va_list list)
 {
 	char *validspecs = "csdiuxXop";
-	int i = 0;
+	int i = 0, ii = 0, tempx = *(x_ptr) + 1;
 
 	(void)list;
 
-	while (validspecs[i])
+	for (; format[tempx]; tempx++, ii++)
 	{
-		if (format[*(x_ptr) + 2] == validspecs[i])
+		for (i = 0; validspecs[i]; i++)
 		{
-			_putchar(' ');
-			count++;
+			if (format[tempx] == validspecs[i])
+			{
+				_putchar(' ');
+				count++;
+				*(x_ptr) = tempx;
+				return (count);
+			}
 		}
-		i++;
 	}
-	return (count);
+	return (-1);
 }
