@@ -1,9 +1,10 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ * print_percent - prints %
+ * @count: keeps count
+ * @format: format str
+ * @x_ptr: index
+ * Return: count
  */
 int print_percent(int count, const char *format, int *x_ptr)
 {
@@ -14,15 +15,8 @@ int print_percent(int count, const char *format, int *x_ptr)
 		_putchar('%'), count++, *(x_ptr) += 1;
 		return (count);
 	}
-//	for (i = *(x_ptr) + 1; i < _strlen((char *)format); i++)
-//		if (format[i] != ' ')
-//			signal = 1;
 	if (signal == 0)
 		return (-1);
-	else
-		_putchar('%'), count++;
-//	_putchar(format[*(x_ptr)]), count++;
-	/*if (format[*(x_ptr)] != '\n')
-	 *(x_ptr) += 1;*/
+	_putchar('%'), count++;
 	return (count);
 }
