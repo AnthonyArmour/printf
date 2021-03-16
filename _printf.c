@@ -10,17 +10,16 @@ int _printf(const char *format, ...)
 	int x = 0, count = 0;
 	int *x_ptr = &x;
 
+	if (format == NULL)
+		return (-1);
 	va_start(list, format);
-	while (format && format[x])
+	for (; format && format[x]; x++)
 	{
+		if (count == -1)
+			return (-1);
 		if (format[x] == '%')
 		{
-			if (format[x + 1] == '%')
-			{
-				_putchar(format[x + 1]);
-				count++;
-			}
-			else if (format[x + 1] == 'l')
+			if (format[x + 1] == 'l')
 			{
 				count = print_long(x_ptr, count, format, list);
 				x++;
@@ -31,16 +30,13 @@ int _printf(const char *format, ...)
 				x++;
 			}
 			else
-			{
 				count = print_spec(x_ptr, count, format, list);
-			}
 		}
 		else
 		{
 			_putchar(format[x]);
 			count++;
 		}
-		x++;
 	}
 	va_end(list);
 	return (count);

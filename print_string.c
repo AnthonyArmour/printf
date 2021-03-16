@@ -10,6 +10,8 @@ int print_string(int count, va_list list)
 	char *temp_string = va_arg(list, char *);
 	int x = 0;
 
+	if (temp_string == NULL)
+		return (-1);
 	while (temp_string && temp_string[x])
 	{
 		_putchar(temp_string[x]);
