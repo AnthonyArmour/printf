@@ -73,5 +73,5 @@ int print_spec(int *x_ptr, int count, const char *format, va_list list);
 int print_pound(int count, const char *format, int *x_ptr, va_list list);
 int print_space(int count, const char *format, int *x_ptr, va_list list);
 int print_plus(int count, const char *format, int *x_ptr, va_list list);
-
+int print_percent(int count, const char *format, int *x_ptr);
 #endif

@@ -10,6 +10,8 @@ int print_rev(int count, va_list list)
 	char *s = va_arg(list, char *);
 	int i = _strlen(s) - 1;
 
+	if (!s)
+		return (-1);
 	while (s && i >= 0)
 	{
 		_putchar(s[i]);

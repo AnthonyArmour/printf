@@ -19,18 +19,7 @@ int _printf(const char *format, ...)
 			return (-1);
 		if (format[x] == '%')
 		{
-			if (format[x + 1] == 'l')
-			{
-				count = print_long(x_ptr, count, format, list);
-				x++;
-			}
-			else if (format[x + 1] == 'h')
-			{
-				count = print_short(x_ptr, count, format, list);
-				x++;
-			}
-			else
-				count = print_spec(x_ptr, count, format, list);
+			count = print_spec(x_ptr, count, format, list);
 		}
 		else
 		{
