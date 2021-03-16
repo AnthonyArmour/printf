@@ -11,6 +11,11 @@ int p_binary(int count, va_list list)
 	char str[33];
 	unsigned int num = va_arg(list, unsigned int);
 
+	if (num == 0)
+	{
+		_putchar(num + '0'), count++;
+		return (count);
+	}
 	while (num != 0)
 	{
 		str[x] = (num % 2) + 48;
