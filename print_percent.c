@@ -8,7 +8,7 @@
  */
 int print_percent(int count, const char *format, int *x_ptr)
 {
-	int i, signal = 0;
+	int signal = 0;
 
 	if (format[*(x_ptr) + 1] == '%')
 	{
