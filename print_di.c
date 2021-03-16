@@ -1,49 +1,31 @@
 #include "holberton.h"
 /**
- * print_number - int to string
+ * print_number - prints a number
  * @count: keeping count for printf
  * @n: input int
  * Return: count
  */
 int print_number(int count, int n)
 {
-	unsigned int x;
-	unsigned int nn = n;
-	unsigned int y = 1000000000;
+	char c = '0';
 
 	if (n < 0)
 	{
 		_putchar('-');
 		count++;
-		nn = -n;
-	}
-	if (nn < 1)
-	{
-		_putchar('0' + nn * 1);
-		count++;
-	}
-	while (nn >= 1)
-	{
-		if (nn >= y)
-		{
-			x = nn / y;
-			_putchar('0' + x);
-			count++;
-			nn = nn - (x * y);
-			y = y / 10;
-			while (nn < y)
-			{
-				_putchar('0' + 0);
-				count++;
-				y = y / 10;
-			}
-		}
+		if (n % 10 == 0)
+			n = -n;
 		else
 		{
-			y = y / 10;
+			n++;
+			c = '1';
+			n = -n;
 		}
 	}
-
+	if (n / 10)
+		count = print_number(count, n / 10);
+	_putchar(n % 10 + c);
+	count++;
 	return (count);
 }
 /**
