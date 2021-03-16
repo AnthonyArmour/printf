@@ -8,15 +8,13 @@
 int print_number(int count, unsigned int n)
 {
 	char c = '0';
+
 	if (n == 0)
 		return (count);
-	else
-	{
-		if (n / 10)
-			count = print_number(count, n / 10);
-		_putchar(n % 10 + c);
-		count++;
-	}
+	if (n / 10)
+		count = print_number(count, n / 10);
+	_putchar(n % 10 + c);
+	count++;
 	return (count);
 }
 /**
