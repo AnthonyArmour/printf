@@ -5,27 +5,18 @@
  * @n: input int
  * Return: count
  */
-int print_number(int count, int n)
+int print_number(int count, unsigned int n)
 {
 	char c = '0';
-
-	if (n < 0)
+	if (n == 0)
+		return (count);
+	else
 	{
-		_putchar('-');
+		if (n / 10)
+			count = print_number(count, n / 10);
+		_putchar(n % 10 + c);
 		count++;
-		if (n % 10 == 0)
-			n = -n;
-		else
-		{
-			n++;
-			c = '1';
-			n = -n;
-		}
 	}
-	if (n / 10)
-		count = print_number(count, n / 10);
-	_putchar(n % 10 + c);
-	count++;
 	return (count);
 }
 /**
@@ -44,6 +35,12 @@ int print_di(int count, va_list list)
 		count++;
 		return (count);
 	}
-	count = print_number(count, num);
+	if (num < 0)
+	{
+		num *= -1;
+		_putchar('-');
+		count++;
+	}
+	count = print_number(count, (unsigned int)num);
 	return (count);
 }
