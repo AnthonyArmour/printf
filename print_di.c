@@ -54,6 +54,14 @@ int print_number(int count, int n)
  */
 int print_di(int count, va_list list)
 {
-	count = print_number(count, va_arg(list, int));
+	int num = va_arg(list, int);
+
+	if (num == 0)
+	{
+		_putchar('0');
+		count++;
+		return (count);
+	}
+	count = print_number(count, num);
 	return (count);
 }
