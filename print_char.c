@@ -7,7 +7,9 @@
  */
 int print_char(int count, va_list list)
 {
-	_putchar((char)va_arg(list, int));
+	char temp_char = (char)va_arg(list, int);
+
+	_putchar(temp_char);
 	count++;
 
 	return (count);
