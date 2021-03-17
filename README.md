@@ -24,5 +24,5 @@ This program is a replica of the C standard library function, printf.
 ## How to use
 \_printf("[FORMAT]", [ARGUMENTS]);
 
-[FORMAT] = input string and/or specifiers
-[ARGUMENTS] = arguments to specifiers
+* [FORMAT] = input string and/or specifiers
+* [ARGUMENTS] = arguments to specifiers
