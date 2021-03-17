@@ -16,6 +16,11 @@ int print_rot13(int count, va_list list)
 		return (count);
 	}
 	new_s = rot13(s);
+	if (!new_s)
+	{
+		count += _printf("(null)");
+		return (count);
+	}
 	while (new_s && new_s[i])
 	{
 		_putchar(new_s[i]);
@@ -34,10 +39,15 @@ char *rot13(char *s)
 {
 	int i;
 	char c;
-	char *new_s = _strdup(s);
+	char *new_s;
 	char *rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLM[\\]^_`nopqrstuvwxyzabcdefghijklm";
 
-	for (i = 0; s[i] != '\0'; i++)
+	new_s = _strdup(s);
+	if (!new_s)
+	{
+		return (NULL);
+	}
+	for (i = 0; new_s[i] != '\0'; i++)
 	{
 		c = new_s[i];
 		if (c >= 'A' && c <= 'z')
