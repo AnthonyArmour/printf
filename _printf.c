@@ -7,23 +7,23 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int x = 0, count = 0;
-	int *x_ptr = &x;
+	int xx = 0, count = 0;
+	int *x_ptr = &xx;
 
 	if (format == NULL)
 		return (-1);
 	va_start(list, format);
-	for (; format && format[x]; x++)
+	for (; format && format[xx]; xx++)
 	{
 		if (count == -1)
 			return (-1);
-		if (format[x] == '%')
+		if (format[xx] == '%')
 		{
 			count = print_spec(x_ptr, count, format, list);
 		}
 		else
 		{
-			_putchar(format[x]);
+			_putchar(format[xx]);
 			count++;
 		}
 	}
