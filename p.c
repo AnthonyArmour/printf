@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  *print_px - prints address in hex
  *@count: keeps count
@@ -49,7 +48,10 @@ int print_p(int count, va_list list)
 	unsigned long int ptr_val;
 
 	if (temp == NULL)
+	{
+		count += _printf("(nil)");
 		return (count);
+	}
 	ptr_val = *(unsigned long int *) &temp;
 	count = print_px(count, ptr_val);
 	return (count);
