@@ -37,4 +37,6 @@ int print_u(int count, va_list list);
 int print_o(int count, va_list list);
 int print_X(int count, va_list list);
 int print_x(int count, va_list list);
+int print_uint(int count, unsigned int n);
+
 #endif
