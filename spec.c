@@ -13,7 +13,8 @@ int print_spec(int *x_ptr, int count, const char *format, va_list list)
 	spec_t specs[] = {
 		{'c', print_char}, {'s', print_string}, {'d', print_di}, {'i', print_di},
 		{'r', print_rev}, {'b', p_binary}, {'u', print_u}, {'o', print_o},
-		{'X', print_X}, {'x', print_x}, {'\0', NULL}
+		{'X', print_X}, {'x', print_x}, {'p', print_p}, {'S', print_S},
+		{'\0', NULL}
 	};
 
 	for (; specs[i].letter; i++)
