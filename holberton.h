@@ -42,4 +42,6 @@ int print_px(int count, unsigned long int ptr_val);
 int print_p(int count, va_list list);
 int print_S(int count, va_list list);
 int print_SX(int count, unsigned int num);
+int print_rot13(int count, va_list list);
+char *rot13(char *s);
 #endif
