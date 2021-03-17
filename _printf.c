@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int x = 0, count = 0, y = 0;
+	int x = 0, count = 0;
 	int *x_ptr = &x;
 
 	if (format == NULL)
