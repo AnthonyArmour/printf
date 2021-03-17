@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int x = 0, count = 0;
+	int x = 0, count = 0, y = 0;
 	int *x_ptr = &x;
 
 	if (format == NULL)
@@ -15,11 +15,12 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	for (; format && format[x]; x++)
 	{
-		if (count == -1)
-			return (-1);
 		if (format[x] == '%')
 		{
-			count = print_spec(x_ptr, count, format, list);
+			y = print_spec(x_ptr, count, format, list);
+			if (y == -1)
+				return (-1);
+			count += y;
 		}
 		else
 		{
