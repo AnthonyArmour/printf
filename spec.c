@@ -12,7 +12,8 @@ int print_spec(int *x_ptr, int count, const char *format, va_list list)
 	int i = 0, signal = 0;
 	spec_t specs[] = {
 		{'c', print_char}, {'s', print_string}, {'d', print_di}, {'i', print_di},
-		{'r', print_rev}, {'b', p_binary}, {'\0', NULL}
+		{'r', print_rev}, {'b', p_binary}, {'u', print_u}, {'o', print_o},
+		{'X', print_X}, {'x', print_x}, {'\0', NULL}
 	};
 
 	for (; specs[i].letter; i++)
