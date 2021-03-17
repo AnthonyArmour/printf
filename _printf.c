@@ -15,12 +15,11 @@ int _printf(const char *format, ...)
 	va_start(list, format);
 	for (; format && format[x]; x++)
 	{
+		if (count == -1)
+			return (-1);
 		if (format[x] == '%')
 		{
-			y = print_spec(x_ptr, count, format, list);
-			if (y == -1)
-				return (-1);
-			count += y;
+			count = print_spec(x_ptr, count, format, list);
 		}
 		else
 		{
