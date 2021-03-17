@@ -1,0 +1,63 @@
+.\" Manpage for _printf
+.TH man 3 "16 March 2021" "1.0" "_printf"
+.SH NAME
+_printf - prints output according to format
+
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]...
+
+.SH OPTIONS
+N/A
+
+.SH DESCRIPTION
+Print ARGUMENT(s) according to FORMAT
+
+FORMAT controls the output. Able to interpret following sequences:
+
+\\" 	double quote
+
+\\\\ 	backslash
+
+\\b 	backspace
+
+\\n 	new line
+
+\\t 	horizontal tab
+
+%% 	a single %
+
+%[SPECIFIER] - List of valid specifiers
+
+	%c 	prints a character
+
+	%s 	prints a string
+
+	%d 	prints an integer
+
+	%i 	prints an integer
+
+	%r 	prints a reversed string
+
+	%x 	prints lowercase hexadecimal
+
+	%X 	prints uppercase hexadecimal
+
+	%o 	prints octal
+
+	%b	prints binary
+
+	%u	prints unsigned integer
+
+.SH EXIT VALUES
+Returns count of total characters printed
+
+Returns -1 if invalid FORMAT
+
+.SH BUGS
+Report bugs to buglover@bug.gov
+
+.SH AUTHORS
+Created by Anthony Armour and Kyle Gross
+
+.SH COPYRIGHT
+N/A
