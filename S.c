@@ -12,7 +12,10 @@ int print_S(int count, va_list list)
 	unsigned int num = 0;
 
 	if (!temp_string)
+	{
+		count += _printf("(null)");
 		return (count);
+	}
 	while (temp_string && temp_string[x])
 	{
 		if ((temp_string[x] > 0 && temp_string[x] < 32) ||
