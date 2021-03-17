@@ -12,7 +12,7 @@ int print_rot13(int count, va_list list)
 
 	if (!s)
 	{
-		count += _print("(null)");
+		count += _printf("(null)");
 		return (count);
 	}
 	new_s = rot13(s);
